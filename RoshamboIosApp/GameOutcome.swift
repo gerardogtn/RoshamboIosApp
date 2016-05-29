@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+enum GameOutcome: Int {
+  case Loose = -1, Tie = 0, Win = 1
+}
