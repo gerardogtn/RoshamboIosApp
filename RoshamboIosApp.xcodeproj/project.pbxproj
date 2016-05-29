@@ -15,6 +15,7 @@
 		D4BA61A31CFAB5F00012D4BB /* RoshamboIosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA61A21CFAB5F00012D4BB /* RoshamboIosAppTests.swift */; };
 		D4BA61AE1CFAB5F00012D4BB /* RoshamboIosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA61AD1CFAB5F00012D4BB /* RoshamboIosAppUITests.swift */; };
 		D4BA61BC1CFAB75F0012D4BB /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BA61BB1CFAB75F0012D4BB /* ResultViewController.swift */; };
+		D4BA61BE1CFAB9DD0012D4BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BA61BD1CFAB9DD0012D4BB /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D4BA61AD1CFAB5F00012D4BB /* RoshamboIosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshamboIosAppUITests.swift; sourceTree = "<group>"; };
 		D4BA61AF1CFAB5F00012D4BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4BA61BB1CFAB75F0012D4BB /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D4BA61BD1CFAB9DD0012D4BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D4BA61941CFAB5F00012D4BB /* Assets.xcassets */,
 				D4BA61961CFAB5F00012D4BB /* LaunchScreen.storyboard */,
 				D4BA61991CFAB5F00012D4BB /* Info.plist */,
+				D4BA61BD1CFAB9DD0012D4BB /* Images.xcassets */,
 			);
 			path = RoshamboIosApp;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4BA61981CFAB5F00012D4BB /* LaunchScreen.storyboard in Resources */,
+				D4BA61BE1CFAB9DD0012D4BB /* Images.xcassets in Resources */,
 				D4BA61951CFAB5F00012D4BB /* Assets.xcassets in Resources */,
 				D4BA61931CFAB5F00012D4BB /* Main.storyboard in Resources */,
 			);
