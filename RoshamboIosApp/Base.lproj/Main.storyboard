@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="yvI-us-19j">
             <objects>
-                <viewController id="3yh-bX-4ve" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" id="3yh-bX-4ve" customClass="ResultViewController" customModule="RoshamboIosApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5wT-Yk-Tal"/>
                         <viewControllerLayoutGuide type="bottom" id="HCS-tc-8mj"/>
@@ -17,17 +17,77 @@
                     <view key="view" contentMode="scaleToFill" id="RNh-GH-1Wq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's a tie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-zj-f0A">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="yzi-j8-aol">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-II-0Cu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Go back!"/>
+                                <connections>
+                                    <action selector="dismiss" destination="3yh-bX-4ve" eventType="touchUpInside" id="BLb-CN-k3O"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HCS-tc-8mj" firstAttribute="top" secondItem="HOw-II-0Cu" secondAttribute="bottom" constant="50" id="4VB-Ux-Hj8"/>
+                            <constraint firstItem="yzi-j8-aol" firstAttribute="top" secondItem="ljN-zj-f0A" secondAttribute="bottom" constant="100" id="6jE-NA-Z72"/>
+                            <constraint firstItem="yzi-j8-aol" firstAttribute="centerX" secondItem="RNh-GH-1Wq" secondAttribute="centerX" id="NEH-xs-2sg"/>
+                            <constraint firstItem="ljN-zj-f0A" firstAttribute="top" secondItem="5wT-Yk-Tal" secondAttribute="bottom" constant="47" id="O0q-Xq-j6S"/>
+                            <constraint firstItem="HOw-II-0Cu" firstAttribute="centerX" secondItem="RNh-GH-1Wq" secondAttribute="centerX" id="QEF-AR-KFg"/>
+                            <constraint firstItem="ljN-zj-f0A" firstAttribute="centerX" secondItem="RNh-GH-1Wq" secondAttribute="centerX" id="z8h-vW-hFq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ljN-zj-f0A"/>
+                                <exclude reference="yzi-j8-aol"/>
+                                <exclude reference="HOw-II-0Cu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="O0q-Xq-j6S"/>
+                                <exclude reference="z8h-vW-hFq"/>
+                                <exclude reference="6jE-NA-Z72"/>
+                                <exclude reference="NEH-xs-2sg"/>
+                                <exclude reference="QEF-AR-KFg"/>
+                                <exclude reference="4VB-Ux-Hj8"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="ljN-zj-f0A"/>
+                                <include reference="yzi-j8-aol"/>
+                                <include reference="HOw-II-0Cu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="O0q-Xq-j6S"/>
+                                <include reference="z8h-vW-hFq"/>
+                                <include reference="6jE-NA-Z72"/>
+                                <include reference="NEH-xs-2sg"/>
+                                <include reference="QEF-AR-KFg"/>
+                                <include reference="4VB-Ux-Hj8"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="yzi-j8-aol" id="Ba0-Ga-cO4"/>
+                        <outlet property="text" destination="ljN-zj-f0A" id="1dN-Dr-zD4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qld-wo-GSo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163" y="335"/>
+            <point key="canvasLocation" x="847" y="241.5"/>
         </scene>
-        <!--Result View Controller-->
+        <!--Make Selection View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ResultViewController" customModule="RoshamboIosApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MakeSelectionViewController" customModule="RoshamboIosApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -60,6 +120,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVJ-jh-MTF" userLabel="rock">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="rock"/>
+                                <connections>
+                                    <action selector="onRockClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="hai-Xe-NCs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7k-I0-R3R" userLabel="paper">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -136,6 +199,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="itsATie" width="183" height="200"/>
         <image name="paper" width="75" height="65"/>
         <image name="rock" width="75" height="65"/>
         <image name="scissors" width="75" height="65"/>
