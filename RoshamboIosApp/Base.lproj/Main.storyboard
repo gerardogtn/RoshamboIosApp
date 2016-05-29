@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -34,11 +35,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="scissors" translatesAutoresizingMaskIntoConstraints="NO" id="WrD-I9-dhz">
+                                <rect key="frame" x="432" y="99" width="96" height="77"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="rock" translatesAutoresizingMaskIntoConstraints="NO" id="TbH-lu-MzW">
+                                <rect key="frame" x="251" y="267" width="97" height="77"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="paper" translatesAutoresizingMaskIntoConstraints="NO" id="y1b-WG-XXt">
+                                <rect key="frame" x="251" y="99" width="98" height="77"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYR-1r-Gj5">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7f-NM-BsX">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scissors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meG-3n-ARE">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TbH-lu-MzW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="EcS-SB-PCP"/>
+                            <constraint firstItem="TbH-lu-MzW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Msa-9Z-vPT"/>
+                            <constraint firstItem="c7f-NM-BsX" firstAttribute="centerX" secondItem="y1b-WG-XXt" secondAttribute="centerX" id="OWp-E2-GvW"/>
+                            <constraint firstItem="bYR-1r-Gj5" firstAttribute="top" secondItem="TbH-lu-MzW" secondAttribute="bottom" constant="15" id="Uts-EH-bts"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WrD-I9-dhz" secondAttribute="trailing" constant="30" id="Vis-Q2-mvx"/>
+                            <constraint firstItem="y1b-WG-XXt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aNl-zQ-bhm"/>
+                            <constraint firstItem="meG-3n-ARE" firstAttribute="centerX" secondItem="WrD-I9-dhz" secondAttribute="centerX" id="nnf-o2-JDC"/>
+                            <constraint firstItem="y1b-WG-XXt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="paG-0z-RFc"/>
+                            <constraint firstItem="c7f-NM-BsX" firstAttribute="top" secondItem="y1b-WG-XXt" secondAttribute="bottom" constant="15" id="s4N-Mw-SdX"/>
+                            <constraint firstItem="bYR-1r-Gj5" firstAttribute="centerX" secondItem="TbH-lu-MzW" secondAttribute="centerX" id="vfc-pB-fPz"/>
+                            <constraint firstItem="meG-3n-ARE" firstAttribute="top" secondItem="WrD-I9-dhz" secondAttribute="bottom" constant="15" id="xKd-wR-7Bm"/>
+                            <constraint firstItem="WrD-I9-dhz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="xjI-1N-L7D"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="y1b-WG-XXt"/>
+                                <exclude reference="bYR-1r-Gj5"/>
+                                <exclude reference="c7f-NM-BsX"/>
+                                <exclude reference="meG-3n-ARE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="EcS-SB-PCP"/>
+                                <exclude reference="Msa-9Z-vPT"/>
+                                <exclude reference="Uts-EH-bts"/>
+                                <exclude reference="vfc-pB-fPz"/>
+                                <exclude reference="aNl-zQ-bhm"/>
+                                <exclude reference="paG-0z-RFc"/>
+                                <exclude reference="OWp-E2-GvW"/>
+                                <exclude reference="s4N-Mw-SdX"/>
+                                <exclude reference="Vis-Q2-mvx"/>
+                                <exclude reference="xjI-1N-L7D"/>
+                                <exclude reference="nnf-o2-JDC"/>
+                                <exclude reference="xKd-wR-7Bm"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="y1b-WG-XXt"/>
+                                <include reference="bYR-1r-Gj5"/>
+                                <include reference="c7f-NM-BsX"/>
+                                <include reference="meG-3n-ARE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="EcS-SB-PCP"/>
+                                <include reference="Msa-9Z-vPT"/>
+                                <include reference="Uts-EH-bts"/>
+                                <include reference="vfc-pB-fPz"/>
+                                <include reference="aNl-zQ-bhm"/>
+                                <include reference="paG-0z-RFc"/>
+                                <include reference="OWp-E2-GvW"/>
+                                <include reference="s4N-Mw-SdX"/>
+                                <include reference="Vis-Q2-mvx"/>
+                                <include reference="xjI-1N-L7D"/>
+                                <include reference="nnf-o2-JDC"/>
+                                <include reference="xKd-wR-7Bm"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="9" y="235.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="paper" width="75" height="65"/>
+        <image name="rock" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+    </resources>
 </document>
