@@ -10,8 +10,6 @@ import UIKit
 
 class MakeSelectionViewController: UIViewController {
 
-  var gameResult : GameOutcome!
-  
   let textOptions = [GameOutcome.Win: "You win!", GameOutcome.Loose: "You lose!", GameOutcome.Tie:  "You tied!"]
   
   override func viewDidLoad() {
@@ -25,48 +23,12 @@ class MakeSelectionViewController: UIViewController {
   // Function to be executed when a user clicks on rock. It goes to ResultViewController
   // all programatically
   @IBAction func onRockClick() {
-    switch GameSelection.generateRandom(){
-    case .Rock:
-      gameResult = .Tie
-      goToTie()
-    case .Paper:
-      gameResult = .Win
-      goToPaperBeatsRock()
-    case .Scissors:
-      gameResult = .Loose
-      goToRockBeatsScissors()
-    }
-  }
-  
-  func goToTie() {
     let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
+    let computerChoice = GameSelection.generateRandom()
+    let result = GameSelection.Rock.result(computerChoice)
     
-    controller.textToDisplay = textOptions[gameResult]!
-    controller.imageName = "itsATie"
-    presentViewController(controller, animated: true, completion: nil)
-  }
-  
-  func goToPaperBeatsRock() {
-    let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
-    
-    controller.textToDisplay = textOptions[gameResult]!
-    controller.imageName = "PaperCoversRock"
-    presentViewController(controller, animated: true, completion: nil)
-  }
-  
-  func goToRockBeatsScissors() {
-    let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
-    
-    controller.textToDisplay = textOptions[gameResult]!
-    controller.imageName = "RockCrushesScissors"
-    presentViewController(controller, animated: true, completion: nil)
-  }
-  
-  func goToScissorsBeatsPaper() {
-    let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
-    
-    controller.textToDisplay = textOptions[gameResult]!
-    controller.imageName = "ScissorsCutPaper"
+    controller.textToDisplay = textOptions[result!.0]!
+    controller.imageName = result!.1
     presentViewController(controller, animated: true, completion: nil)
   }
   
