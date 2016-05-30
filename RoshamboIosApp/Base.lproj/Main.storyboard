@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -24,7 +25,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="yzi-j8-aol">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="itsATie" translatesAutoresizingMaskIntoConstraints="NO" id="yzi-j8-aol">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-II-0Cu">
@@ -51,12 +52,12 @@
                                 <exclude reference="HOw-II-0Cu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4VB-Ux-Hj8"/>
+                                <exclude reference="QEF-AR-KFg"/>
                                 <exclude reference="O0q-Xq-j6S"/>
                                 <exclude reference="z8h-vW-hFq"/>
                                 <exclude reference="6jE-NA-Z72"/>
                                 <exclude reference="NEH-xs-2sg"/>
-                                <exclude reference="QEF-AR-KFg"/>
-                                <exclude reference="4VB-Ux-Hj8"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -66,12 +67,12 @@
                                 <include reference="HOw-II-0Cu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4VB-Ux-Hj8"/>
+                                <include reference="QEF-AR-KFg"/>
                                 <include reference="O0q-Xq-j6S"/>
                                 <include reference="z8h-vW-hFq"/>
                                 <include reference="6jE-NA-Z72"/>
                                 <include reference="NEH-xs-2sg"/>
-                                <include reference="QEF-AR-KFg"/>
-                                <include reference="4VB-Ux-Hj8"/>
                             </mask>
                         </variation>
                     </view>
@@ -128,6 +129,9 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <accessibility key="accessibilityConfiguration" label="paper"/>
                                 <state key="normal" image="paper"/>
+                                <connections>
+                                    <action selector="onPaperClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="i4m-3k-JkL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17u-E0-roR" userLabel="scissors">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -157,14 +161,14 @@
                                 <exclude reference="17u-E0-roR"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4bc-ok-heP"/>
+                                <exclude reference="ywR-FK-LbT"/>
                                 <exclude reference="Bfy-iL-q3P"/>
                                 <exclude reference="H22-nh-IqG"/>
                                 <exclude reference="AIA-hO-qF4"/>
                                 <exclude reference="YQW-Le-EXD"/>
                                 <exclude reference="5YP-5H-4Qn"/>
                                 <exclude reference="GQ4-fT-7cM"/>
-                                <exclude reference="4bc-ok-heP"/>
-                                <exclude reference="ywR-FK-LbT"/>
                                 <exclude reference="ZYA-UZ-uGX"/>
                                 <exclude reference="uK2-NE-9f3"/>
                             </mask>
@@ -179,19 +183,22 @@
                                 <include reference="17u-E0-roR"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4bc-ok-heP"/>
+                                <include reference="ywR-FK-LbT"/>
                                 <include reference="Bfy-iL-q3P"/>
                                 <include reference="H22-nh-IqG"/>
                                 <include reference="AIA-hO-qF4"/>
                                 <include reference="YQW-Le-EXD"/>
                                 <include reference="5YP-5H-4Qn"/>
                                 <include reference="GQ4-fT-7cM"/>
-                                <include reference="4bc-ok-heP"/>
-                                <include reference="ywR-FK-LbT"/>
                                 <include reference="ZYA-UZ-uGX"/>
                                 <include reference="uK2-NE-9f3"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="3yh-bX-4ve" kind="modal" identifier="paper" id="boH-b9-UTy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

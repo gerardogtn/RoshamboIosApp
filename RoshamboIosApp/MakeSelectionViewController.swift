@@ -11,28 +11,21 @@ import UIKit
 class MakeSelectionViewController: UIViewController {
 
   var gameResult : GameOutcome!
+  
   let textOptions = [GameOutcome.Win: "You win!", GameOutcome.Loose: "You lose!", GameOutcome.Tie:  "You tied!"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
-  
-  func generateComputerSelection() -> GameSelection {
-    let r = arc4random() % 3
-    return GameSelection(rawValue: Int(r))!
-  }
-  
   
   // Function to be executed when a user clicks on rock. It goes to ResultViewController
   // all programatically
   @IBAction func onRockClick() {
-    switch generateComputerSelection() {
+    switch GameSelection.generateRandom(){
     case .Rock:
       gameResult = .Tie
       goToTie()
@@ -44,7 +37,6 @@ class MakeSelectionViewController: UIViewController {
       goToRockBeatsScissors()
     }
   }
-
   
   func goToTie() {
     let controller = self.storyboard?.instantiateViewControllerWithIdentifier("ResultViewController") as! ResultViewController
@@ -76,6 +68,22 @@ class MakeSelectionViewController: UIViewController {
     controller.textToDisplay = textOptions[gameResult]!
     controller.imageName = "ScissorsCutPaper"
     presentViewController(controller, animated: true, completion: nil)
+  }
+  
+  @IBAction func onPaperClick() {
+    self.performSegueWithIdentifier("paper", sender: self)
+  }
+
+  // REQUIRES: segue.identifier is a GameSelection rawValue.
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let controller = segue.destinationViewController as! ResultViewController
+    
+    let computerChoice = GameSelection.generateRandom()
+    let userChoice = GameSelection(rawValue: segue.identifier!)
+    let result: (GameOutcome, String)? = userChoice?.result(computerChoice)
+    
+    controller.textToDisplay = textOptions[result!.0]!
+    controller.imageName = result!.1
   }
 
 }
